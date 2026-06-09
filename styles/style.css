@@ -242,35 +242,38 @@
   padding-block: var(--save-dialog-ok-button-padding-block);
 }
 
-/*Фильтры картинок*/
+/*Фильтры картинок - множественные фильтры*/
 .post__image-brightness {
-  filter: brightness(60%);
+  filter: brightness(60%) contrast(120%) saturate(90%);
 }
 
 .post__image-blur {
-  filter: blur(2px);
+  filter: blur(2px) brightness(110%);
 }
 
 .post__image-sepia {
-  filter: sepia(80%);
+  filter: sepia(80%) contrast(120%) brightness(110%);
 }
 
 .post__image-invert {
-  filter: invert(100%);
+  filter: invert(100%) brightness(120%);
 }
 
 .post__image-contrast {
-  filter: contrast(200%);
+  filter: contrast(200%) brightness(90%);
 }
 
 .post__image-hue-rotate {
-  filter: hue-rotate(90deg);
+  filter: hue-rotate(90deg) saturate(150%) brightness(110%);
 }
 
 .post__image-saturate {
-  filter: saturate(300%);
+  filter: saturate(300%) brightness(105%) contrast(110%);
 }
 
+.post__image-multiple {
+  filter: blur(1px) sepia(50%) contrast(130%) brightness(105%);
+}
 /*Анимация сердца*/
 .sparks {
   opacity: 0;
