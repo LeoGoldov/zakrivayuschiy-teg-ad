@@ -367,7 +367,7 @@
       </li>
     </ul>
   </main>
-  <footer class="footer">
+ <footer class="footer">
     <button class="button_with_hover_effect button__save-dialog" type="button" id="save-button">
       <svg class="button-floppy-icon" width="21" height="21">
         <use href="./svg/floppy.svg#floppy"></use>
@@ -397,27 +397,30 @@
   
   <script src="./scripts/like.js"></script>
   <script>
-    (function() {
+    // Ждем полной загрузки DOM
+    document.addEventListener('DOMContentLoaded', function() {
       var dialog = document.getElementById('save-dialog');
       var saveBtn = document.getElementById('save-button');
       var okBtn = document.getElementById('save-dialog-ok');
       
       if (saveBtn && dialog) {
-        saveBtn.onclick = function(e) {
-          if (e) e.preventDefault();
+        saveBtn.addEventListener('click', function(event) {
+          event.preventDefault();
+          event.stopPropagation();
           dialog.showModal();
           return false;
-        };
+        });
       }
       
       if (okBtn && dialog) {
-        okBtn.onclick = function(e) {
-          if (e) e.preventDefault();
+        okBtn.addEventListener('click', function(event) {
+          event.preventDefault();
+          event.stopPropagation();
           dialog.close();
           return false;
-        };
+        });
       }
-    })();
+    });
   </script>
 </body>
 
