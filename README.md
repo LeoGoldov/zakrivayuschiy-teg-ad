@@ -1,1 +1,1 @@
-https://github.com/LeoGoldov/zakrivayuschiy-teg-ad
+Мой гитхаб: https://github.com/LeoGoldov/zakrivayuschiy-teg-ad
