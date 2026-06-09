@@ -377,50 +377,47 @@
       </span>
     </button>
   </footer>
-<dialog id="save-dialog" class="save-dialog">
-  <div class="save-dialog-content">
-    <div class="save-dialog-text">
-      <svg class="floppy-icon" width="50" height="50">
-        <use href="/svg/floppy.svg#floppy"></use>
-      </svg>
-      <span class="button__text" style="text-transform: uppercase; line-height: 1.5;">
-        Вставьте дискету, чтобы продолжить
-      </span>
+  <dialog id="save-dialog" class="save-dialog">
+    <div class="save-dialog-content">
+      <div class="save-dialog-text">
+        <svg class="floppy-icon" width="50" height="50">
+          <use href="/svg/floppy.svg#floppy"></use>
+        </svg>
+        <span class="button__text" style="text-transform: uppercase; line-height: 1.5;">
+          Вставьте дискету, чтобы продолжить
+        </span>
+      </div>
+      <button id="save-dialog-ok" type="button" class="button_with_hover_effect button__save-dialog-ok">
+        <span class="button__text">
+          OK
+        </span>
+      </button>
     </div>
-    <button id="save-dialog-ok" type="button" class="button_with_hover_effect button__save-dialog-ok">
-      <span class="button__text">
-        OK
-      </span>
-    </button>
-  </div>
-</dialog>
-
-<script src="./scripts/like.js"></script>
-<script>
-  (function() {
-    const dialog = document.getElementById('save-dialog');
-    const saveButton = document.getElementById('save-button');
-    const okButton = document.getElementById('save-dialog-ok');
-    
-    if (saveButton && dialog) {
-      saveButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        dialog.showModal();
-        return false;
-      });
-    }
-    
-    if (okButton && dialog) {
-      okButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        dialog.close();
-        return false;
-      });
-    }
-  })();
-</script>
+  </dialog>
+  
+  <script src="./scripts/like.js"></script>
+  <script>
+    (function() {
+      var dialog = document.getElementById('save-dialog');
+      var saveBtn = document.getElementById('save-button');
+      var okBtn = document.getElementById('save-dialog-ok');
+      
+      if (saveBtn && dialog) {
+        saveBtn.onclick = function(e) {
+          e.preventDefault();
+          dialog.showModal();
+          return false;
+        };
+      }
+      
+      if (okBtn && dialog) {
+        okBtn.onclick = function(e) {
+          e.preventDefault();
+          dialog.close();
+          return false;
+        };
+      }
+    })();
+  </script>
 </body>
-
 </html>
