@@ -370,7 +370,7 @@
   <footer class="footer">
     <button class="button_with_hover_effect button__save-dialog" type="button" id="save-button">
       <svg class="button-floppy-icon" width="21" height="21">
-        <use href="/svg/floppy.svg#floppy"></use>
+        <use href="./svg/floppy.svg#floppy"></use>
       </svg>
       <span class="button__text">
         Сохранить на память
@@ -381,7 +381,7 @@
     <div class="save-dialog-content">
       <div class="save-dialog-text">
         <svg class="floppy-icon" width="50" height="50">
-          <use href="/svg/floppy.svg#floppy"></use>
+          <use href="./svg/floppy.svg#floppy"></use>
         </svg>
         <span class="button__text" style="text-transform: uppercase; line-height: 1.5;">
           Вставьте дискету, чтобы продолжить
@@ -404,7 +404,7 @@
       
       if (saveBtn && dialog) {
         saveBtn.onclick = function(e) {
-          e.preventDefault();
+          if (e) e.preventDefault();
           dialog.showModal();
           return false;
         };
@@ -412,7 +412,7 @@
       
       if (okBtn && dialog) {
         okBtn.onclick = function(e) {
-          e.preventDefault();
+          if (e) e.preventDefault();
           dialog.close();
           return false;
         };
@@ -420,4 +420,5 @@
     })();
   </script>
 </body>
+
 </html>
