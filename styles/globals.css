@@ -35,6 +35,11 @@ input {
   color: currentColor;
   font-family: inherit;
   font-size: inherit;
+  cursor: pointer;
+}
+
+button{
+  background: transparent;
 }
 
 ul,
