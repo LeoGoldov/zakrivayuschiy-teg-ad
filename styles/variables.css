@@ -16,7 +16,7 @@
   --dialog-width: clamp(341px, calc(325.507px + 4.131vw), 385px);
   --save-dialog-ok-button-padding-block: 12.5px;
   --card-like-button-padding: 12.5px 37px;
-  --background-image-path: url(../svg/background.svg);
+  --background-image-path: repeating-linear-gradient(45deg, #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 8px);
   --contour-color: #000;
   --animation-fill-color: #FF0000;
   --accent-color: #000;
