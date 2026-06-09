@@ -377,47 +377,50 @@
       </span>
     </button>
   </footer>
-  <dialog id="save-dialog" class="save-dialog">
-    <div class="save-dialog-content">
-      <div class="save-dialog-text">
-        <svg class="floppy-icon" width="50" height="50">
-          <use href="/svg/floppy.svg#floppy"></use>
-        </svg>
-        <span class="button__text" style="text-transform: uppercase; line-height: 1.5;">
-          Вставьте дискету, чтобы продолжить
-        </span>
-      </div>
-      <button id="save-dialog-ok" type="button" class="button_with_hover_effect button__save-dialog-ok">
-        <span class="button__text">
-          OK
-        </span>
-      </button>
+<dialog id="save-dialog" class="save-dialog">
+  <div class="save-dialog-content">
+    <div class="save-dialog-text">
+      <svg class="floppy-icon" width="50" height="50">
+        <use href="/svg/floppy.svg#floppy"></use>
+      </svg>
+      <span class="button__text" style="text-transform: uppercase; line-height: 1.5;">
+        Вставьте дискету, чтобы продолжить
+      </span>
     </div>
-  </dialog>
-  <script src="./scripts/like.js"></script>
-  <script>
+    <button id="save-dialog-ok" type="button" class="button_with_hover_effect button__save-dialog-ok">
+      <span class="button__text">
+        OK
+      </span>
+    </button>
+  </div>
+</dialog>
+
+<script src="./scripts/like.js"></script>
+<script>
+  (function() {
     const dialog = document.getElementById('save-dialog');
     const saveButton = document.getElementById('save-button');
     const okButton = document.getElementById('save-dialog-ok');
     
-    if (saveButton) {
-      saveButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (dialog) {
-          dialog.showModal();
-        }
+    if (saveButton && dialog) {
+      saveButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        dialog.showModal();
+        return false;
       });
     }
     
-    if (okButton) {
-      okButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (dialog) {
-          dialog.close();
-        }
+    if (okButton && dialog) {
+      okButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        dialog.close();
+        return false;
       });
     }
-  </script>
+  })();
+</script>
 </body>
 
 </html>
